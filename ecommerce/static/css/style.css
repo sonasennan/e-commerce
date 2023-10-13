@@ -1,0 +1,24 @@
+body
+{
+font-family: 'Oxygen', sans-serif;
+/* background-color:#99ffbb; */
+}
+
+.footer
+{
+height:50px;
+width:100%;
+background-color:#003300;
+position:fixed;
+bottom:0;
+left:0;
+text-align:center;
+color:#4ddbff;
+padding:10px;
+}
+
+.bg-success
+{
+background-color:#003300!important;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Login</h3>
+<form method="POST" style="margin-bottom:100px;">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Username:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Username" name="u">
+</div>
+
+      <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Password:</label>
+  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter Password" name="p1">
+</div>
+
+
+          <div class="mb-3">
+  <input type="submit" class="form-control">
+</div>
+
+</form>
+
+{% if messages %}
+<ul>
+    {% for msg in messages %}
+    <li>{{msg}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

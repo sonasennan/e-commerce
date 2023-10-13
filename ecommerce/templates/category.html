@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src="{% static 'images/banner.webp' %}" width="100%" height="450px">
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <h3 class="text-center">OUR COLLECTIONS</h3>
+    <p style="text-align:justify;line-height:2;" class="text-primary">If you’ve been reading this blog for a while, you’ve probably seen at least one of our customer spotlights. We love our customers! As a former small business marketer myself, I love our passionate dedication to empowering and supporting small business growth.
+        For your business, too, your customers’ wins are your wins. If you’re a small retailer, this is true not just with your in-store customer service, but also your ecommerce website’s overall UX, its check-out flow, your online return options, and your product descriptions. By writing accurate, educational, and engaging product descriptions, a copywriter serves their customers just as much as a sales associate does when someone walks through your shop’s front door.</p>
+</div>
+
+
+<div class="container fluid m-7" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+            <div class="card" style="width:22rem;height:420px;">
+  <img src="{{i.image.url}}" class="card-img-top" alt="..." height="200px;">
+  <div class="card-body">
+    <h5 class="card-title fw-bold">{{i.cname}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <a href="{% url 'shop:allproducts' i.cname %}" class="btn btn-primary">PRODUCTS</a>
+  </div>
+</div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
